@@ -7,11 +7,11 @@ const cors=require('cors');
 
 const passport = require('./modules/passport');
 
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 // const classesRouter = require('./api/classes');
 // const accountsRouter = require('./api/accounts');
 // const assignmentRouter = require('./api/assignment');
-const loginRouter = require('./modules/passport/loginRouter');
+// const loginRouter = require('./modules/passport/loginRouter');
 // const authRouter = require('./api/authenticator');
 // const emailRouter = require('./api/email');
 // const gradeRouter = require('./api/grades');
@@ -37,7 +37,7 @@ app.use(passport.initialize());
 app.use('/', indexRouter);
 // app.use('/classes', passport.authenticate('jwt', {session: false}), classesRouter);
 // app.use('/accounts',  accountsRouter);
-app.use('/login', loginRouter);
+// app.use('/login', loginRouter);
 // app.use('/auth', authRouter);
 // app.use('/assignment',  passport.authenticate('jwt', {session: false}), assignmentRouter);
 // app.use('/grades', passport.authenticate('jwt', {session: false}), gradeRouter);
