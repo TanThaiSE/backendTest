@@ -71,7 +71,7 @@ passport.use(new LocalStrategy(
 
 const opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = 'super-secret';
+opts.secretOrKey = 'secret';
 
 passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
     //return done(null, { id: jwt_payload.id, username: jwt_payload.username });//req.user

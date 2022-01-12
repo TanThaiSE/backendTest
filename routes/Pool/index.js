@@ -12,4 +12,5 @@ var connect =mysql.createConnection({
     // database:'classmanagement',
     // connectionLimit:50
 })
+
 module.exports=connect;

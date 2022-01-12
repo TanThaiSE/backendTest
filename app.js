@@ -5,13 +5,13 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors=require('cors');
 
-// const passport = require('./modules/passport');
+const passport = require('./modules/passport');
 
 const indexRouter = require('./routes/index');
 // const classesRouter = require('./api/classes');
 // const accountsRouter = require('./api/accounts');
 // const assignmentRouter = require('./api/assignment');
-// const loginRouter = require('./modules/passport/loginRouter');
+const loginRouter = require('./modules/passport/loginRouter');
 // const authRouter = require('./api/authenticator');
 // const emailRouter = require('./api/email');
 // const gradeRouter = require('./api/grades');
@@ -33,11 +33,12 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(passport.initialize());
+app.use(passport.initialize());
+
 app.use('/', indexRouter);
 // app.use('/classes', passport.authenticate('jwt', {session: false}), classesRouter);
 // app.use('/accounts',  accountsRouter);
-// app.use('/login', loginRouter);
+app.use('/login', loginRouter);
 // app.use('/auth', authRouter);
 // app.use('/assignment',  passport.authenticate('jwt', {session: false}), assignmentRouter);
 // app.use('/grades', passport.authenticate('jwt', {session: false}), gradeRouter);
