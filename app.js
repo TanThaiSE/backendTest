@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors=require('cors');
 
-const passport = require('./modules/passport');
+// const passport = require('./modules/passport');
 
 const indexRouter = require('./routes/index');
 // const classesRouter = require('./api/classes');
@@ -33,7 +33,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 app.use('/', indexRouter);
 // app.use('/classes', passport.authenticate('jwt', {session: false}), classesRouter);
